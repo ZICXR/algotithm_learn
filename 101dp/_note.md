@@ -218,3 +218,20 @@ if (j >= w[i]) f[j] += f[j -  w[i]];
 
 - 求解方案数 也可以新开数组在动态规划时记录
 
+### 分组背包
+
+<img src="img/fzbb.png">
+
+### 机器分配问题
+
+<img src="img/jqfpwt.png">
+
+
+### 金明的预算方案
+<span style="color:red">**多刷**</span></br>
+<img src="img/jmdysfa.png">
+
+### 开心的金明
+
+
+
