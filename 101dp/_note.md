@@ -233,5 +233,32 @@ if (j >= w[i]) f[j] += f[j -  w[i]];
 
 ### 开心的金明
 
+01背包 
+
+### 货币系统
+完全背包
+
+### 货币系统 2
+
+bn 代替 an 表示货币，范围不能缩小 也不能放大，所以 
+bn 一定是从 an 中找出来的
+<span style="color:red">**多刷**</span></br>
+<img src="img/hbxt2.png">
+<img src="img/hbxt21.png">
+
+
+### 混合背包
+
+第 i 件物品的类型，决定该物品使用那种状态计算
+<img src="img/hhbb.png">
+
+
+### 有依赖的背包问题
+<img src="img/yyldbbwt.png">
+
+选择每个子树 视为 分组背包问题
+
+
+
 
 
