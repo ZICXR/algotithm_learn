@@ -21,7 +21,7 @@ int main() {
     }
 
     int res = 0;
-    for (int i = 1; i <= n; i ++) res = max(res, f[i][1]); // 最优答案一定是 不持有股票第一天
+    res = max(f[n][1], f[n][2]); // 最优答案一定是 不持有股票时
     cout << res << endl;
     return 0;
 }
