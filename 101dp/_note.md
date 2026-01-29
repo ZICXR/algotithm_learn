@@ -336,3 +336,72 @@ f[i, j] 表示 第 i 个字母 在 第 j 种状态下的数量 每个需要枚�
 
 <img src="img/ymt.png">
 
+
+### 炮兵阵地
+
+<img src="img/pbzd.png">
+
+
+### 愤怒的小鸟
+
+过原点 y = ax^2 + bx
+两个点确定一条抛物线 而且不能相同横坐标
+
+题意：给点 问最少几条抛物线 可以把点覆盖
+
+集合类型的dp 优化爆搜
+
+- 不优化
+int dfs(int state){ // state 存储当前哪些列已被覆盖
+    if (state 已经包含所有列) return 0;
+    int res = INF;
+    任选没有被覆盖的一列x 
+    枚举所有能覆盖 x 的抛物线
+        更新一下 state -> new_state
+        res = min(dfs(new_state) + 1, res)
+
+    return res;
+}
+
+// f[state]
+// x 表示第几个列 path[x][j] 表示x的第几条抛物线
+// x, path[x][j], new_state = state | path[x][j]
+// 优化之后
+void dfs(int state, int cnt){ // state 存储当前哪些列已被覆盖
+    if (state 已经包含所有列) ans = min(cnt, ans); return;
+    任选没有被覆盖的一列x 
+    枚举所有能覆盖 x 的抛物线
+        更新一下 state -> new_state
+        dfs(new_state, cnt + 1);
+}
+
+
+
+## 6 区间 dp
+- 环形
+- 记录方案数
+- 区间 dp + 高精度
+- 二维区间 dp
+
+f[i, j] 从 i 到 j 合并的方案 属性是最小值
+使用 i- j 区间内的数 k 作为分界点
+for (k)
+    f[i, j] = min(f[i, k] + f[k + 1, j] + s[i ,j])
+
+### 环形合并石子
+首尾也可以合并
+
+方法：
+- n个点 n - 1条边 枚举缺口在哪  n^4 x
+- n 条长度为 n的链  那么 可以这样做 1 - n, 1 - n  形成一个长度是2n 的链，包含了各种首尾相连的情况
+    - 对长度是2n的链 做一遍石子合并 
+    - for(i)  min(f[i, i + n - 1])
+
+区间 dp 两种写法
+- 迭代式
+for (int len = 1; len <= n; len ++)
+    for (int L = 1; L + len - 1 <= n; L ++)
+        R = L + len - 1;
+- 记忆化搜索
+
+
